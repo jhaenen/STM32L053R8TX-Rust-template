@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "type": "cortex-debug",
+          "request": "launch",
+          "name": "Cortex Debug",
+          "cwd": "${workspaceFolder}",
+          "preLaunchTask": "${defaultBuildTask}",
+          "executable": "target/thumbv6m-none-eabi/debug/emb-test",
+          "servertype": "openocd",
+          "device": "STM32L053R8Tx",
+          "configFiles": [
+            "./openocd.cfg"
+          ],
+          "gdbPath": "gdb",
+          "preLaunchCommands": [
+            "monitor arm semihosting enable",
+          ],
+          "svdPath": "./stm32l0x3.svd"
+        }
+    ]
+}
